@@ -1,3 +1,53 @@
 body {
-  background: red;
+  background: #ED4264;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFEDBC, #ED4264);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFEDBC, #ED4264); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: 'Indie Flower', cursive, 'sans-serif';
+}
+
+h1 {
+  font-family: 'Indie Flower', cursive, 'sans-serif';
+  font-size: 60px;
+  text-align: center;
+  margin: 4% 0 0 0;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 5% 14%;
+  /* display: none; */
+}
+
+.box {
+  flex: auto;
+  flex-basis: 13%;
+  background-color: white;
+  height: 100px;
+  border: 2px solid black;
+  text-align: center;
+  background-color: #ECE9E6;
+}
+
+.winner-p1{
+  flex-flow: column;
+  display: flex;
+  align-items: center;
+  display: none;
+}
+
+img {
+  width: 40%;
+  height: auto;
+  flex: auto;
+  text-align: center;
+
 }
