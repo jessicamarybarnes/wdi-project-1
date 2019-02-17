@@ -49,5 +49,8 @@ img {
   height: auto;
   flex: auto;
   text-align: center;
+}
 
+.red {
+  background-color: red;
 }
