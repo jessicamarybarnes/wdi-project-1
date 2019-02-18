@@ -34,7 +34,6 @@ h3 {
   height: 100px;
   border: 2px solid black;
   text-align: center;
-  background-color: #ECE9E6;
 }
 
 .winner-p1{
@@ -52,9 +51,13 @@ img {
 }
 
 .red {
-  background-color: red;
+  background-image: url('../Images/CocktailP1.png');
+  background-size: contain;
+  background-repeat: no-repeat, repeat;
 }
 
 .yellow {
-  background-color: yellow;
+  background-image: url('../Images/CocktailP2.jpg');
+  background-size: contain;
+  background-repeat: no-repeat, repeat;
 }

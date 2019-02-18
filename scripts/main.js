@@ -28,8 +28,10 @@ window.addEventListener('DOMContentLoaded', () => {
       //adding an event listener to each box that changes the class to red
       box.addEventListener('click', (e) => {
         console.log(clicks)
-        console.log('row', e.target.getAttribute('data-row'), 'column', e.target.getAttribute('data-column'))
         validMove(e)
+        checkWonHorizontally(e)
+        console.log(grid)
+        console.log('row', e.target.getAttribute('data-row'), 'column', e.target.getAttribute('data-column'))
       })
       //adding an attribute of data-row to the box with a value of i
       box.setAttribute('data-row', i)
@@ -43,6 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
     //pushing the row to the grid array
     grid.push(row)
   }
+
 
 
 
@@ -80,26 +83,59 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
 
-//...........................COUNTER COLOUR............................
+//...........................COUNTER COLOUR................................
 
 // I have created a counter for 'clicks' so that for every even number of clicks, the class changes to red and every odd number to yellow.
 
   const player = function(e) {
     if (clicks % 2 === 0) {
+      e.target.classList.remove('white')
       e.target.classList.add('red')
     } else {
+      e.target.classList.remove('white')
       e.target.classList.add('yellow')
     }
   }
 
+//  ..............................LAST MOVE......................................
+
+
+
 //  .........................CHECK VERTICAL..................................
 
-  const verticalWin = function(e) {
-    
+//loop through the grid and check for consecutive i values with x not changing
+
+const checkHasWon = function() {
+
+}
+
+const checkWonVertically = function() {
+
+}
+
+  //get the clicked row value as an integer
+  //loop through the row
+  //create a variable to count the number of consecutive boxes with the same class
+  //when it reaches the same class value as the one thats been clicked, add 1 to the counter
+  //when it reaches on that isn't the same class value it returns the counter to 0.
+  //if the result is less than 4, then it is not a win.
+
+  const checkWonHorizontally = function(e) {
+    const clickedRowString = e.target.getAttribute('data-row')
+    const clickedRow = parseInt(clickedRowString)
+    const classOfClicked = e.target.getAttribute('class').replace('box ', '')
+
+    let counter = 0
+    for (let i=0; i<grid[clickedRow].length; i++) {
+      if (grid[clickedRow][i].classList.contains(classOfClicked) === true) {
+        counter = counter + 1
+      } else {
+        counter = 0
+      }
+
+      console.log('k',counter)
+    }
   }
-
-
-
 
 
 
