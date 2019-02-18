@@ -4,8 +4,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
   const gridElement = document.querySelector('.grid')
-  const player1 = document.querySelector('.player1')
-  const player2 = document.querySelector('.player2')
+  const red = document.querySelector('.red')
+  const yellow = document.querySelector('.yellow')
+  let clicks = 0
 
 // .........................CREATE THE GRID ............................
 // .........................ADD EVENT LISTENER ............................
@@ -26,8 +27,9 @@ window.addEventListener('DOMContentLoaded', () => {
       box.className = 'white box'
       //adding an event listener to each box that changes the class to red
       box.addEventListener('click', (e) => {
-        validMove(e)
+        console.log(clicks)
         console.log('row', e.target.getAttribute('data-row'), 'column', e.target.getAttribute('data-column'))
+        validMove(e)
       })
       //adding an attribute of data-row to the box with a value of i
       box.setAttribute('data-row', i)
@@ -56,7 +58,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const validMove = function(e) {
     if (e.target.classList.contains('white')) {
       if (e.target.getAttribute('data-row') === '5') {
-        e.target.classList.add('red')
+        player(e)
+        return clicks++
       } else {
         //check if there are divs below with the class of red or yellow
         const dataRowString = e.target.getAttribute('data-row')
@@ -64,8 +67,9 @@ window.addEventListener('DOMContentLoaded', () => {
         const dataColumnString = e.target.getAttribute('data-column')
         const dataColumn = parseInt(dataColumnString)
         const boxBelow = grid[dataRow + 1][dataColumn]
-        if (boxBelow.classList.contains('red' || 'yellow')) {
-          e.target.classList.add('red')
+        if (boxBelow.classList.contains('red') || boxBelow.classList.contains('yellow')) {
+          player(e)
+          return clicks++
         } else {
           alert('This is not a valid move. Please click an alternative white space.')
         }
@@ -74,6 +78,26 @@ window.addEventListener('DOMContentLoaded', () => {
       alert('This is not a valid move. Please click an alternative white space.')
     }
   }
+
+
+//...........................COUNTER COLOUR............................
+
+// I have created a counter for 'clicks' so that for every even number of clicks, the class changes to red and every odd number to yellow.
+
+  const player = function(e) {
+    if (clicks % 2 === 0) {
+      e.target.classList.add('red')
+    } else {
+      e.target.classList.add('yellow')
+    }
+  }
+
+//  .........................CHECK VERTICAL..................................
+
+  const verticalWin = function(e) {
+    
+  }
+
 
 
 
