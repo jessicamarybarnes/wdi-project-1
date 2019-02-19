@@ -9,7 +9,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const winner1 = document.querySelector('.winner-p1')
   const winner2 = document.querySelector('.winner-p2')
   const welcome = document.querySelector('.welcome')
-  const playAgain = document.querySelector('.play-again')
+  const p1PlayAgain = document.querySelector('#p1-play-again')
+  const p2PlayAgain = document.querySelector('#p2-play-again')
   let clicks = 0
 
 // .........................CREATE THE GRID ............................
@@ -208,7 +209,11 @@ const checkHasWon = function() {
 
 // ................................PLAY AGAIN.......................................
 
-  playAgain.addEventListener('click', () => {
+  p1PlayAgain.addEventListener('click', () => {
+    location.reload()
+  })
+
+  p2PlayAgain.addEventListener('click', () => {
     location.reload()
   })
 
