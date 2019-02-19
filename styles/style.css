@@ -1,3 +1,10 @@
+.welcome  {
+  border: 2px solid black;
+  text-align: center;
+  margin: 2% 14%;
+  /* display: none; */
+}
+
 body {
   background: #ED4264;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #FFEDBC, #ED4264);  /* Chrome 10-25, Safari 5.1-6 */
@@ -20,6 +27,17 @@ h3 {
   text-align: center;
 }
 
+h4 {
+  text-align: justify;
+  margin: 0 20px;
+  font-size: 30px;
+}
+
+p {
+  text-align: justify;
+  margin: 0 20px;
+}
+
 .grid {
   display: flex;
   flex-flow: row wrap;
@@ -34,27 +52,54 @@ h3 {
   height: 100px;
   border: 2px solid black;
   text-align: center;
+  border-radius: 5px;
+  margin: .2%;
 }
 
 .winner-p1{
   flex-flow: column;
-  display: flex;
   align-items: center;
   display: none;
+  text-align: center;
 }
 
 .winner-p2{
   flex-flow: column;
-  display: flex;
   align-items: center;
   display: none;
+  text-align: center;
 }
 
-img {
-  width: 40%;
+.play-again {
+  display: flex;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin-top: 10px;
+    text-decoration: none;
+    background: #000000;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+#P1-cocktail {
+  width: 15%;
   height: auto;
   flex: auto;
   text-align: center;
+  border-radius: 10px;
+}
+
+#P2-cocktail {
+  width: 15%;
+  height: auto;
+  flex: auto;
+  text-align: center;
+  border-radius: 10px;
 }
 
 .red {

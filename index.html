@@ -10,21 +10,28 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </head>
   <body>
-    <h1><i class="fas fa-cocktail"></i> Connect the cocktails <i class="fas fa-cocktail"></i></h1>
+    <h1>Connect the cocktails</h1>
 
+    <div class ="welcome">
+      <h4>Rules</h4>
+      <p>Step 1: Grab a friend and click 'Start' to play the game</p>
+      <p>Step 2: Click on the white boxes on the table to place a cocktail there</p>
+      <p>Step 3: Let your friend place their cocktail in a chosen location</p>
+      <p>Step 4: Try to line up 4 of your cocktails consecutively before your opponent does. This can be vertical, horizontal or vertical!</p>
+    </div>
 
     <div class ="winner-p1">
       <h2>Congratulations player <span>1</span> !</h2>
       <h3>You have won the game!</h3>
-      <img src="./Images/CocktailP1.png" alt="Cocktail image"/>
-      <button>Play again</button>
+      <img src="./Images/CocktailP1.png" alt="Cocktail image" id="P1-cocktail"/>
+      <button class="play-again">Play again</button>
     </div>
 
     <div class ="winner-p2">
       <h2>Congratulations player <span>2</span> !</h2>
       <h3>You have won the game!</h3>
-      <img src="./Images/CocktailP2.jpg" alt="Cocktail image"/>
-      <button>Play again</button>
+      <img src="./Images/CocktailP2.jpg" alt="Cocktail image" id="P2-cocktail"/>
+      <button class="play-again">Play again</button>
     </div>
 
     <div class="grid">

@@ -8,6 +8,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const yellow = document.querySelector('.yellow')
   const winner1 = document.querySelector('.winner-p1')
   const winner2 = document.querySelector('.winner-p2')
+  const welcome = document.querySelector('.welcome')
+  const playAgain = document.querySelector('.play-again')
   let clicks = 0
 
 // .........................CREATE THE GRID ............................
@@ -136,10 +138,12 @@ const checkHasWon = function() {
       if (counter === 4) {
         if (classOfClicked1 === 'red') {
           gridElement.style.display = 'none'
-          winner1.style.display = 'initial'
+          welcome.style.display = 'none'
+          winner1.style.display = 'flex'
         } if (classOfClicked1 === 'yellow') {
           gridElement.style.display = 'none'
-          winner2.style.display = 'initial'
+          welcome.style.display = 'none'
+          winner2.style.display = 'flex'
         }
       }
     }
@@ -163,16 +167,50 @@ const checkHasWon = function() {
       if (counter === 4) {
         if (classOfClicked2 === 'red') {
           gridElement.style.display = 'none'
-          winner1.style.display = 'initial'
+          welcome.style.display = 'none'
+          winner1.style.display = 'flex'
         } if (classOfClicked2 === 'yellow') {
           gridElement.style.display = 'none'
-          winner2.style.display = 'initial'
+          welcome.style.display = 'none'
+          winner2.style.display = 'flex'
         }
       }
     }
   }
 
 
+
+// ........................CHECK DIAGONAL UP..................................
+
+  // const checkDiagonalUp = function(e) {
+  //   const clickedColumnString = e.target.getAttribute('data-column')
+  //   const clickedColumn = parseInt(clickedColumnString)
+  //   const classOfClicked2 = e.target.getAttribute('class').replace('box ', '')
+  //
+  //   let counter = 0
+  //   for (let x=0; x<grid.length; x++) {
+  //     if (grid[x][clickedColumn].classList.contains(classOfClicked2) === true) {
+  //       counter = counter + 1
+  //     } else {
+  //       counter = 0
+  //     }
+  //     if (counter === 4) {
+  //       if (classOfClicked2 === 'red') {
+  //         gridElement.style.display = 'none'
+  //         winner1.style.display = 'initial'
+  //       } if (classOfClicked2 === 'yellow') {
+  //         gridElement.style.display = 'none'
+  //         winner2.style.display = 'initial'
+  //       }
+  //     }
+  //   }
+  // }
+
+// ................................PLAY AGAIN.......................................
+
+  playAgain.addEventListener('click', () => {
+    location.reload()
+  })
 
 
 })
