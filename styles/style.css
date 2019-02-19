@@ -72,19 +72,23 @@ p {
 
 .play-again {
   display: flex;
-    border: none;
-    border-radius: 5px;
-    padding: 1rem 2rem;
-    margin-top: 10px;
-    text-decoration: none;
-    background: #000000;
-    color: #ffffff;
-    font-family: sans-serif;
-    font-size: 1rem;
-    cursor: pointer;
-    text-align: center;
-
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  margin-top: 10px;
+  text-decoration: none;
+  background: #000000;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  outline: 0;
+  opacity: 1;
+  transition: 0.3s;
 }
+
+.play-again:hover {opacity: 0.6}
 
 #P1-cocktail {
   width: 15%;
