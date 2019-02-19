@@ -6,6 +6,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const gridElement = document.querySelector('.grid')
   const red = document.querySelector('.red')
   const yellow = document.querySelector('.yellow')
+  const winner1 = document.querySelector('.winner-p1')
+  const winner2 = document.querySelector('.winner-p2')
   let clicks = 0
 
 // .........................CREATE THE GRID ............................
@@ -113,6 +115,9 @@ const checkWonVertically = function() {
 
 }
 
+
+//...........................CHECK HORIZONTAL.........................................
+
   //get the clicked row value as an integer
   //loop through the row
   //create a variable to count the number of consecutive boxes with the same class
@@ -132,8 +137,15 @@ const checkWonVertically = function() {
       } else {
         counter = 0
       }
-
-      console.log('k',counter)
+      if (counter === 4) {
+        if (classOfClicked === 'red') {
+          gridElement.style.display = 'none'
+          winner1.style.display = 'initial'
+        } if (classOfClicked === 'yellow') {
+          gridElement.style.display = 'none'
+          winner2.style.display = 'initial'
+        }
+      }
     }
   }
 

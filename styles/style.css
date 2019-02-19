@@ -43,6 +43,13 @@ h3 {
   display: none;
 }
 
+.winner-p2{
+  flex-flow: column;
+  display: flex;
+  align-items: center;
+  display: none;
+}
+
 img {
   width: 40%;
   height: auto;
