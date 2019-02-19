@@ -32,6 +32,7 @@ window.addEventListener('DOMContentLoaded', () => {
         console.log(clicks)
         validMove(e)
         checkWonHorizontally(e)
+        checkWonVertically(e)
         console.log(grid)
         console.log('row', e.target.getAttribute('data-row'), 'column', e.target.getAttribute('data-column'))
       })
@@ -111,11 +112,6 @@ const checkHasWon = function() {
 
 }
 
-const checkWonVertically = function() {
-
-}
-
-
 //...........................CHECK HORIZONTAL.........................................
 
   //get the clicked row value as an integer
@@ -128,20 +124,47 @@ const checkWonVertically = function() {
   const checkWonHorizontally = function(e) {
     const clickedRowString = e.target.getAttribute('data-row')
     const clickedRow = parseInt(clickedRowString)
-    const classOfClicked = e.target.getAttribute('class').replace('box ', '')
+    const classOfClicked1 = e.target.getAttribute('class').replace('box ', '')
 
     let counter = 0
     for (let i=0; i<grid[clickedRow].length; i++) {
-      if (grid[clickedRow][i].classList.contains(classOfClicked) === true) {
+      if (grid[clickedRow][i].classList.contains(classOfClicked1) === true) {
         counter = counter + 1
       } else {
         counter = 0
       }
       if (counter === 4) {
-        if (classOfClicked === 'red') {
+        if (classOfClicked1 === 'red') {
           gridElement.style.display = 'none'
           winner1.style.display = 'initial'
-        } if (classOfClicked === 'yellow') {
+        } if (classOfClicked1 === 'yellow') {
+          gridElement.style.display = 'none'
+          winner2.style.display = 'initial'
+        }
+      }
+    }
+  }
+
+
+// ..........................CHECK VERTICAL......................................
+
+  const checkWonVertically = function(e) {
+    const clickedColumnString = e.target.getAttribute('data-column')
+    const clickedColumn = parseInt(clickedColumnString)
+    const classOfClicked2 = e.target.getAttribute('class').replace('box ', '')
+
+    let counter = 0
+    for (let x=0; x<grid.length; x++) {
+      if (grid[x][clickedColumn].classList.contains(classOfClicked2) === true) {
+        counter = counter + 1
+      } else {
+        counter = 0
+      }
+      if (counter === 4) {
+        if (classOfClicked2 === 'red') {
+          gridElement.style.display = 'none'
+          winner1.style.display = 'initial'
+        } if (classOfClicked2 === 'yellow') {
           gridElement.style.display = 'none'
           winner2.style.display = 'initial'
         }
