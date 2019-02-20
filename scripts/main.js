@@ -36,6 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
         validMove(e)
         checkWonHorizontally(e)
         checkWonVertically(e)
+        findDiagonalRight(e)
         console.log(grid)
         console.log('row', e.target.getAttribute('data-row'), 'column', e.target.getAttribute('data-column'))
       })
@@ -180,32 +181,77 @@ const checkHasWon = function() {
   }
 
 
+// ........................CHECK DIAGONAL RIGHT..................................
 
-// ........................CHECK DIAGONAL UP..................................
 
-  // const checkDiagonalUp = function(e) {
+  // const findDiagonalRight = function(e) {
+  //   const clickedRowString = e.target.getAttribute('data-row')
+  //   const clickedRow = parseInt(clickedRowString)
+  //
   //   const clickedColumnString = e.target.getAttribute('data-column')
   //   const clickedColumn = parseInt(clickedColumnString)
+  //
   //   const classOfClicked2 = e.target.getAttribute('class').replace('box ', '')
   //
   //   let counter = 0
   //   for (let x=0; x<grid.length; x++) {
-  //     if (grid[x][clickedColumn].classList.contains(classOfClicked2) === true) {
-  //       counter = counter + 1
-  //     } else {
-  //       counter = 0
-  //     }
-  //     if (counter === 4) {
-  //       if (classOfClicked2 === 'red') {
-  //         gridElement.style.display = 'none'
-  //         winner1.style.display = 'initial'
-  //       } if (classOfClicked2 === 'yellow') {
-  //         gridElement.style.display = 'none'
-  //         winner2.style.display = 'initial'
+  //     for (let i=0; i<grid[clickedRow].length; i++) {
+  //       if (grid[x][i].classList.contains(classOfClicked2) === true) {
+  //         counter = counter + 1
+  //       } else {
+  //         counter = 0
+  //       }
+  //       if (counter === 4) {
+  //         if (classOfClicked2 === 'red') {
+  //           gridElement.style.display = 'none'
+  //           welcome.style.display = 'none'
+  //           winner1.style.display = 'flex'
+  //         } if (classOfClicked2 === 'yellow') {
+  //           gridElement.style.display = 'none'
+  //           welcome.style.display = 'none'
+  //           winner2.style.display = 'flex'
+  //         }
   //       }
   //     }
   //   }
   // }
+
+
+
+  const findDiagonalRight = function(e) {
+    const classOfClickedBox = e.target.getAttribute('class').replace('box ', '')
+
+    const width = grid[0].length
+    // 7
+    const height = grid.length
+    // 6
+
+    for (let i=0; i<=width + height; i++) {
+      let counter = 0
+      for (let x=0; x<=i; x++) {
+        const y = i - x
+        if (y < height && x < width) {
+          const cell = grid[y][x]
+          if (cell.classList.contains(classOfClickedBox) === true) {
+            counter = counter + 1
+          } else {
+            counter = 0
+          }
+          if (counter === 4) {
+            if (classOfClickedBox === 'red') {
+              gridElement.style.display = 'none'
+              welcome.style.display = 'none'
+              winner1.style.display = 'flex'
+            } if (classOfClickedBox === 'yellow') {
+              gridElement.style.display = 'none'
+              welcome.style.display = 'none'
+              winner2.style.display = 'flex'
+            }
+          }
+        }
+      }
+    }
+  }
 
 // ................................PLAY AGAIN.......................................
 
