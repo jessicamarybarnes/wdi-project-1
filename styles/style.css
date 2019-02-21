@@ -1,13 +1,28 @@
 .welcome  {
-  background: 	#38479A;
+  background: #38479A;
   border: 2px solid white;
-  text-align: center;
   border-radius: 5px;
   margin: 2% 14%;
   padding: 2%;
   color: white;
   opacity: .8;
+  text-align: justify;
+  z-index: 0;
   /* transition: display 0.5s; */
+}
+
+.alert {
+  background: #38479A;
+  border: 2px solid white;
+  text-align: center;
+  border-radius: 5px;
+  margin: 15% 40%;
+  padding: 2%;
+  color: white;
+  opacity: .8;
+  justify-content: center;
+  display: none;
+  z-index: 2;
 }
 
 body {
@@ -51,13 +66,12 @@ h3 {
 }
 
 h4 {
-  text-align: justify;
+  /* text-align: justify; */
   margin: 0 20px;
   font-size: 30px;
 }
 
 p {
-  text-align: justify;
   margin: 0 20px;
 }
 
@@ -80,6 +94,7 @@ p {
   text-align: center;
   border-radius: 5px;
   margin: .2%;
+  background-position: center;
 }
 
 .winner-p1{
@@ -264,6 +279,7 @@ p {
 
 .fade-out {
   animation-name: fadeOut;
-  animation-duration: 2s;
+  animation-duration: 1s;
+  position: fixed;
   /* opacity: 0; */
 }

@@ -12,6 +12,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const p1PlayAgain = document.querySelector('#p1-play-again')
   const p2PlayAgain = document.querySelector('#p2-play-again')
   const header = document.querySelector('h1')
+  const alert = document.querySelector('.alert')
+  const keepGoing = document.querySelector('.continue')
   let clicks = 0
 
   // .........................CREATE THE GRID ............................
@@ -83,11 +85,14 @@ window.addEventListener('DOMContentLoaded', () => {
           player(e)
           return clicks++
         } else {
-          alert('This is not a valid move. Please click an alternative white space.')
+          alert.style.display = 'initial'
+          alert.style.position = 'absolute'
+          // alert.style.z-index = '1'
         }
       }
     } else {
-      alert('This is not a valid move. Please click an alternative white space.')
+      alert.style.display = 'initial'
+      alert.style.position = 'absolute'
     }
   }
 
@@ -259,7 +264,13 @@ window.addEventListener('DOMContentLoaded', () => {
     welcome.classList.add('fade-out')
     setTimeout(() => {
       welcome.style.display = 'none'
-    }, 2000)
+    }, 1000)
+  })
+
+// ...................CONTINUE BUTTON INSTEAD OF ALERT...........................
+
+  keepGoing.addEventListener('click', () => {
+    alert.style.display = 'none'
   })
 
 
