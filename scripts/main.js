@@ -11,6 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const welcome = document.querySelector('.welcome')
   const p1PlayAgain = document.querySelector('#p1-play-again')
   const p2PlayAgain = document.querySelector('#p2-play-again')
+  const header = document.querySelector('h1')
   let clicks = 0
 
   // .........................CREATE THE GRID ............................
@@ -251,5 +252,13 @@ window.addEventListener('DOMContentLoaded', () => {
   p2PlayAgain.addEventListener('click', () => {
     location.reload()
   })
+
+  //.........................REMOVING RULES ON SCROLL............................
+
+  window.addEventListener('scroll', () => {
+    welcome.style.display = 'none'
+  })
+
+
 
 })
