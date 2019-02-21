@@ -7,6 +7,7 @@
   padding: 2%;
   color: white;
   opacity: .8;
+  /* transition: display 0.5s; */
 }
 
 body {
@@ -27,15 +28,26 @@ h1 {
   border-radius: 5px;
   margin: 2% 14%;
   opacity: .9;
+  -webkit-animation-name: flash;
+  animation-name: flash;
+  transition: 0.3s;
   /* padding: 2%; */
 }
 
 h2 {
   text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  margin: auto;
 }
 
 h3 {
   text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  margin: auto;
 }
 
 h4 {
@@ -53,6 +65,9 @@ p {
   display: flex;
   flex-flow: row wrap;
   margin: 5% 25%;
+  -webkit-animation-name: flash;
+  animation-name: flash;
+  transition: 0.3s;
 }
 
 .box {
@@ -83,26 +98,30 @@ p {
 
 .play-again {
   display: flex;
-  border: none;
+
+  border: 2px solid white;
+  background-color: #E9BFD5;
+  color: #38479A;
   border-radius: 5px;
+  margin: 2% 14%;
+  opacity: .9;
   padding: 1rem 2rem;
-  margin-top: 10px;
+
+
   text-decoration: none;
-  background: #000000;
-  color: #ffffff;
   font-family: sans-serif;
   font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
   text-align: center;
   outline: 0;
-  opacity: 1;
   transition: 0.3s;
 }
 
 .play-again:hover {opacity: 0.8}
 
 #P1-cocktail {
-  width: 15%;
+  width: 10%;
   height: auto;
   flex: auto;
   text-align: center;
@@ -217,4 +236,34 @@ p {
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
   }
+}
+
+@keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.fade-out {
+  animation-name: fadeOut;
+  animation-duration: 2s;
+  /* opacity: 0; */
 }

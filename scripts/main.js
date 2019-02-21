@@ -256,7 +256,10 @@ window.addEventListener('DOMContentLoaded', () => {
   //.........................REMOVING RULES ON SCROLL............................
 
   window.addEventListener('scroll', () => {
-    welcome.style.display = 'none'
+    welcome.classList.add('fade-out')
+    setTimeout(() => {
+      welcome.style.display = 'none'
+    }, 2000)
   })
 
 
