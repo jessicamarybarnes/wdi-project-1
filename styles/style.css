@@ -1,14 +1,19 @@
 .welcome  {
-  border: 2px solid black;
+  background: 	#38479A;
+  border: 2px solid white;
   text-align: center;
+  border-radius: 5px;
   margin: 2% 14%;
-  /* display: none; */
+  padding: 2%;
+  color: white;
+  opacity: .8;
+
 }
 
 body {
-  background: #ED4264;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FFEDBC, #ED4264);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FFEDBC, #ED4264); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url('../Images/pink-leaf-background.jpg');
+  /* background-size: 100px; */
+  background-repeat: repeat;
   font-family: 'Indie Flower', cursive, 'sans-serif';
 }
 
@@ -16,7 +21,14 @@ h1 {
   font-family: 'Indie Flower', cursive, 'sans-serif';
   font-size: 60px;
   text-align: center;
-  margin: 4% 0 0 0;
+  padding: 1% 0 0 0;
+  border: 2px solid white;
+  background-color: #38479A;
+  color: white;
+  border-radius: 5px;
+  margin: 2% 14%;
+  opacity: .9;
+  /* padding: 2%; */
 }
 
 h2 {
@@ -41,16 +53,16 @@ p {
 .grid {
   display: flex;
   flex-flow: row wrap;
-  margin: 5% 14%;
-  /* display: none; */
+  margin: 5% 25%;
 }
 
 .box {
   flex: auto;
   flex-basis: 13%;
-  background-color: white;
-  height: 100px;
-  border: 2px solid black;
+  background-color: 	#E9BFD5;
+  opacity: 0.9;
+  height: 80px;
+  border: 2px solid white;
   text-align: center;
   border-radius: 5px;
   margin: .2%;
@@ -107,13 +119,36 @@ p {
 }
 
 .red {
-  background-image: url('../Images/CocktailP1.png');
+  background-image: url('../Images/espresso-martini.png');
   background-size: contain;
   background-repeat: no-repeat, repeat;
+  animation-name: pulse;
+  animation-duration: .5s;
 }
 
 .yellow {
-  background-image: url('../Images/CocktailP2.jpg');
+  background-image: url('../Images/cocktail-pink-with-lime.png');
   background-size: contain;
   background-repeat: no-repeat, repeat;
+  animation-name: pulse;
+  animation-duration: .5s;
+}
+
+/* ..............ANIMATIONS................... */
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }

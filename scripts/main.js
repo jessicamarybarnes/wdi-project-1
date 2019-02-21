@@ -13,10 +13,10 @@ window.addEventListener('DOMContentLoaded', () => {
   const p2PlayAgain = document.querySelector('#p2-play-again')
   let clicks = 0
 
-// .........................CREATE THE GRID ............................
-// .........................ADD EVENT LISTENER ............................
+  // .........................CREATE THE GRID ............................
+  // .........................ADD EVENT LISTENER ............................
 
-//created a grid array
+  //created a grid array
 
   const grid = []
 
@@ -57,7 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-// .........................CHECK FOR VALID MOVE................................
+  // .........................CHECK FOR VALID MOVE................................
 
 
   //a function that checks that the class of box is white, then checks if the white
@@ -90,10 +90,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  //...........................COUNTER COLOUR................................
 
-//...........................COUNTER COLOUR................................
-
-// I have created a counter for 'clicks' so that for every even number of clicks, the class changes to red and every odd number to yellow.
+  // I have created a counter for 'clicks' so that for every even number of clicks, the class changes to red and every odd number to yellow.
 
   const player = function(e) {
     if (clicks % 2 === 0) {
@@ -105,19 +104,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-//  ..............................LAST MOVE......................................
-
-
-
-//  .........................CHECK VERTICAL..................................
-
-//loop through the grid and check for consecutive i values with x not changing
-
-const checkHasWon = function() {
-
-}
-
-//...........................CHECK HORIZONTAL.........................................
+  //...........................CHECK HORIZONTAL.........................................
 
   //get the clicked row value as an integer
   //loop through the row
@@ -152,8 +139,7 @@ const checkHasWon = function() {
     }
   }
 
-
-// ..........................CHECK VERTICAL......................................
+  // ..........................CHECK VERTICAL......................................
 
   const checkWonVertically = function(e) {
     const clickedColumnString = e.target.getAttribute('data-column')
@@ -181,8 +167,7 @@ const checkHasWon = function() {
     }
   }
 
-
-// ........................CHECK DIAGONAL RIGHT..................................
+  // ........................CHECK DIAGONAL RIGHT..................................
 
   const findDiagonalRight = function(e) {
     const classOfClickedBox = e.target.getAttribute('class').replace('box ', '')
@@ -219,11 +204,7 @@ const checkHasWon = function() {
     }
   }
 
-
-
-// ........................CHECK DIAGONAL LEFT..................................
-
-
+  // ........................CHECK DIAGONAL LEFT..................................
 
   const findDiagonalLeft = function(e) {
     const classOfClickedBox = e.target.getAttribute('class').replace('box ', '')
@@ -261,130 +242,7 @@ const checkHasWon = function() {
     }
   }
 
-  // const findDiagonalLeft = function(e) {
-  //   const classOfClickedBox = e.target.getAttribute('class').replace('box ', '')
-  //
-  //   const width = grid[0].length
-  //   // 7
-  //   const height = grid.length
-  //   // 6
-  //
-  //   for (let i=height; i>=0; i--) {
-  //     let counter = 0
-  //     for (let x=0; x<=i; x++) {
-  //       const y = i
-  //       console.log(x, 'is x')
-  //       console.log('incorect y', y)
-  //       console.log('this is i', i)
-  //       if (y < height && x < width) {
-  //         const cell = grid[y][x]
-  //         if (cell.classList.contains(classOfClickedBox) === true) {
-  //           counter = counter + 1
-  //         } else {
-  //           counter = 0
-  //         }
-  //         if (counter === 4) {
-  //           if (classOfClickedBox === 'red') {
-  //             gridElement.style.display = 'none'
-  //             welcome.style.display = 'none'
-  //             winner1.style.display = 'flex'
-  //           } if (classOfClickedBox === 'yellow') {
-  //             gridElement.style.display = 'none'
-  //             welcome.style.display = 'none'
-  //             winner2.style.display = 'flex'
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-
-//SECOND EFFORT AT DIAGONAL LEFT
-
-  //
-  // const findDiagonalLeft = function(e) {
-  //   const classOfClickedBox = e.target.getAttribute('class').replace('box ', '')
-  //
-  //   const width = grid[0].length
-  //   // 7
-  //   const height = grid.length
-  //   // 6
-  //
-  //   for (let x=0; x<3; x++) {
-  //     let counter = 0
-  //     for (let i=0; i<=x; i++) {
-  //       console.log('i is ' + i)
-  //       console.log('x is ' + i)
-  //       const y = x
-  //       console.log('y is ' + y)
-  //       if (y < height && x < width) {
-  //         const cell = grid[y][x]
-  //         if (cell.classList.contains(classOfClickedBox) === true) {
-  //           counter = counter + 1
-  //         } else {
-  //           counter = 0
-  //         }
-  //         if (counter === 4) {
-  //           if (classOfClickedBox === 'red') {
-  //             gridElement.style.display = 'none'
-  //             welcome.style.display = 'none'
-  //             winner1.style.display = 'flex'
-  //           } if (classOfClickedBox === 'yellow') {
-  //             gridElement.style.display = 'none'
-  //             welcome.style.display = 'none'
-  //             winner2.style.display = 'flex'
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-
-  //................................3RD EFFORT .............................
-
-  //
-  // const findDiagonalLeft = function(e) {
-  //   const clickedColumnString = e.target.getAttribute('data-column')
-  //   const clickedColumn = parseInt(clickedColumnString)
-  //   const classOfClicked2 = e.target.getAttribute('class').replace('box ', '')
-  //   const clickedRowString = e.target.getAttribute('data-row')
-  //   const clickedRow = parseInt(clickedRowString)
-  //
-  //   let counter = 0
-  //   for (let position = -3; position<= 3; position++){
-  //     console.log(position)
-  //     console.log(`grid[${clickedRow + position}][${clickedColumn - position}]`)
-  //     if (grid[clickedRow + position][clickedColumn - position].classList.contains(classOfClicked2) === true) {
-  //
-  //       counter = counter + 1
-  //     } else {
-  //       counter = 0
-  //     }
-  //   }
-  //
-  //
-  //   for (let x=0; x<grid.length; x++) {
-  //     if (grid[x][clickedColumn].classList.contains(classOfClicked2) === true) {
-  //       counter = counter + 1
-  //     } else {
-  //       counter = 0
-  //     }
-  //     if (counter === 4) {
-  //       if (classOfClicked2 === 'red') {
-  //         gridElement.style.display = 'none'
-  //         welcome.style.display = 'none'
-  //         winner1.style.display = 'flex'
-  //       } if (classOfClicked2 === 'yellow') {
-  //         gridElement.style.display = 'none'
-  //         welcome.style.display = 'none'
-  //         winner2.style.display = 'flex'
-  //       }
-  //     }
-  //   }
-  // }
-
-
-// ................................PLAY AGAIN.......................................
+  // ................................PLAY AGAIN.......................................
 
   p1PlayAgain.addEventListener('click', () => {
     location.reload()
@@ -393,6 +251,5 @@ const checkHasWon = function() {
   p2PlayAgain.addEventListener('click', () => {
     location.reload()
   })
-
 
 })
