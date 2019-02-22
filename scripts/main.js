@@ -235,10 +235,12 @@ window.addEventListener('DOMContentLoaded', () => {
                   gridElement.style.display = 'none'
                   welcome.style.display = 'none'
                   winner1.style.display = 'flex'
+                  return // ADDED THIS TO OPTIMIZE
                 } if (classOfClickedBox === 'yellow') {
                   gridElement.style.display = 'none'
                   welcome.style.display = 'none'
                   winner2.style.display = 'flex'
+                  return // ADDED THIS TO OPTIMIZE
                 }
               }
             }
@@ -247,6 +249,8 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
+
+
 
   // ................................PLAY AGAIN.......................................
 
@@ -267,7 +271,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 1000)
   })
 
-// ...................CONTINUE BUTTON INSTEAD OF ALERT...........................
+  // ...................CONTINUE BUTTON INSTEAD OF ALERT...........................
 
   keepGoing.addEventListener('click', () => {
     alert.style.display = 'none'

@@ -8,7 +8,6 @@
   opacity: .8;
   text-align: justify;
   z-index: 0;
-  /* transition: display 0.5s; */
 }
 
 .alert {
@@ -27,7 +26,6 @@
 
 body {
   background-image: url('../Images/pink-leaf-background.jpg');
-  /* background-size: 100px; */
   background-repeat: repeat;
   font-family: 'Indie Flower', cursive, 'sans-serif';
 }
@@ -46,7 +44,6 @@ h1 {
   -webkit-animation-name: flash;
   animation-name: flash;
   transition: 0.3s;
-  /* padding: 2%; */
 }
 
 h2 {
@@ -66,7 +63,6 @@ h3 {
 }
 
 h4 {
-  /* text-align: justify; */
   margin: 0 20px;
   font-size: 30px;
 }
@@ -113,7 +109,6 @@ p {
 
 .play-again {
   display: flex;
-
   border: 2px solid white;
   background-color: #E9BFD5;
   color: #38479A;
@@ -121,8 +116,6 @@ p {
   margin: 2% 14%;
   opacity: .9;
   padding: 1rem 2rem;
-
-
   text-decoration: none;
   font-family: sans-serif;
   font-size: 1rem;
@@ -147,13 +140,6 @@ p {
   animation-name: flip;
   animation-duration: .5s;
 }
-/*
-#P1-cocktail.flip {
-  -webkit-backface-visibility: visible;
-  backface-visibility: visible;
-  -webkit-animation-name: flip;
-  animation-name: flip;
-} */
 
 #P2-cocktail {
   width: 15%;
@@ -167,7 +153,6 @@ p {
   animation-name: flip;
   animation-duration: .5s;
 }
-
 
 .red {
   background-image: url('../Images/espresso-martini.png');
@@ -281,5 +266,4 @@ p {
   animation-name: fadeOut;
   animation-duration: 1s;
   position: fixed;
-  /* opacity: 0; */
 }
